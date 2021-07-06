@@ -55,3 +55,11 @@ def edit(name):
             print(f"After edit {_['name']}, {_['number']},{_['email']}")
         else:
             print("contact not found")
+
+
+def search(name):
+    for _ in contact_lists:
+        if name in _['name']:
+            print('found the contact. retriving full information: ')
+            print(
+                f"Name: {_['name']}, \nNumber:{_['number']}, \nEmail:{_['email']}")

@@ -1,5 +1,5 @@
- # contact management system
-from  utils import database
+# contact management system
+from utils import database
 
 
 def menu():
@@ -66,7 +66,9 @@ def edit_contact():
 def edit_multiple_contact_number(): pass
 
 
-def search_contact(): pass
+def search_contact():
+    name = input('Enter search name:')
+    database.search(name)
 
 
 menu()
