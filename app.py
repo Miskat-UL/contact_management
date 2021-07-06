@@ -6,9 +6,62 @@ def menu():
     user_choice = input("""
         Enter C - For create contact
         Enter S - For show all contact
+        Enter E - For Edit a contact
         Enter D - For delete any contact
         Enter M - For add another(extra) number to the same person
         Enter S - For search a contact
+        Enter Q  - to Exit 
         
     """)
+
+    while user_choice != 'q':
+        if user_choice == 'c':
+            create_contact()
+        elif user_choice == 's':
+            show_contacts()
+        elif user_choice == 'd':
+            delete_contacts()
+        elif user_choice == 'e':
+            edit_contact()
+        elif user_choice == 'm':
+            edit_multiple_contact_number()
+        elif user_choice == 's':
+            search_contact()
+        else:
+            print('wrong keyword - please try again..')
+
+        user_choice = input("""
+                Enter C - For create contact
+                Enter S - For show all contact
+                Enter E - For Edit a contact
+                Enter D - For delete any contact
+                Enter M - For add another(extra) number to the same person
+                Enter S - For search a contact
+                Enter Q  - to Exit 
+
+        """)
+
+
+def create_contact():
+    pass
+
+
+def show_contacts():pass
+
+
+def delete_contacts():pass
+
+
+def edit_contact():pass
+
+
+def edit_multiple_contact_number():pass
+
+
+def search_contact():pass
+
+
+
+
+
 menu()
