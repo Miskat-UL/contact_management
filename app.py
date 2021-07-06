@@ -58,7 +58,9 @@ def delete_contacts():
     database.delete(name)
 
 
-def edit_contact(): pass
+def edit_contact():
+    name = input("Enter the contact name you want to delete: ")
+    database.edit(name)
 
 
 def edit_multiple_contact_number(): pass
