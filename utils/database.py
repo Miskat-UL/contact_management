@@ -14,7 +14,8 @@ def create():
         {
             'name': name,
             'number': number,
-            'email': email
+            'email': email,
+            'extra number': None
         }
     )
 
@@ -35,7 +36,7 @@ def delete(name):
 
 def edit(name):
     for _ in contact_lists:
-        if name in _['name']:
+        if name == _['name']:
             print('found the contact. retriving full information: ')
             print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
             edit_choice = input("""
@@ -58,3 +59,16 @@ def edit(name):
             print(f"After edit {_['name']}, {_['number']},{_['email']}")
         else:
             print("contact not found")
+
+
+def multiple_number(name):
+    for _ in contact_lists:
+        if _['name'] == name:
+            print(f"Contact Found! Name: {_['name']}")
+            add_number = input('Add Extra number: ')
+            _["extra number"] = add_number
+            break
+        else:
+            print('contact not found! ')
+
+
