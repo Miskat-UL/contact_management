@@ -53,19 +53,18 @@ def show_contacts():
         print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
 
 
-def delete_contacts():pass
+def delete_contacts():
+    name = input('Enter the name you want to delete: ')
+    database.delete(name)
 
 
-def edit_contact():pass
+def edit_contact(): pass
 
 
-def edit_multiple_contact_number():pass
+def edit_multiple_contact_number(): pass
 
 
-def search_contact():pass
-
-
-
+def search_contact(): pass
 
 
 menu()

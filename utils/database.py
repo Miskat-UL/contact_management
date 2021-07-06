@@ -21,3 +21,13 @@ def create():
 
 def show():
     return contact_lists
+
+
+#delete function updated.. # tofayel please check
+
+def delete(name):
+    global contact_lists
+    contact_lists = [_ for _ in contact_lists if _['name'] != name]
+    print(f'Contact name: {name} is successfully deleted')
+
+
