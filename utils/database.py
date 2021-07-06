@@ -1,5 +1,9 @@
 contact_lists = []
+
 # update some codes
+
+
+# tofayel please add other functions!
 
 def create():
     name = input('Enter his/her name: ')
