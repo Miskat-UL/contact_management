@@ -3,8 +3,6 @@ contact_lists = []
 # update some codes
 
 
-# tofayel please add other functions!
-
 def create():
     name = input('Enter his/her name: ')
     number = input(f"Enter {name}'s number: ")
@@ -23,8 +21,6 @@ def show():
     return contact_lists
 
 
-#delete function updated.. # tofayel please check
-
 def delete(name):
     global contact_lists
     contact_lists = [_ for _ in contact_lists if _['name'] != name]
@@ -37,7 +33,8 @@ def edit(name):
     for _ in contact_lists:
         if name in _['name']:
             print('found the contact. retriving full information: ')
-            print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
+            print(
+                f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
             edit_choice = input("""
             which field do you want to edit
             press 1 - For Edit Name
