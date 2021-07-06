@@ -1,4 +1,5 @@
  # contact management system
+from  utils import database
 
 
 def menu():
@@ -43,10 +44,13 @@ def menu():
 
 
 def create_contact():
-    pass
+    database.create()
 
 
-def show_contacts():pass
+def show_contacts():
+    contacts = database.show()
+    for _ in contacts:
+        print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
 
 
 def delete_contacts():pass
