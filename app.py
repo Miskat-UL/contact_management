@@ -50,7 +50,7 @@ def create_contact():
 def show_contacts():
     contacts = database.show()
     for _ in contacts:
-        print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
+        print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}, Extra Number: {_['extra number']}")
 
 
 def delete_contacts():
@@ -64,8 +64,13 @@ def edit_contact():
 
 
 def edit_multiple_contact_number():
+
     name = input("Enter the contact name you want to edit: ")
     database.multiplecontact(name)
+
+
+    name = input("Enter the contact name who have multiple number: ")
+    database.multiple_number(name)
 
 
 
