@@ -1,5 +1,5 @@
- # contact management system
-from  utils import database
+# contact management system
+from utils import database
 
 
 def menu():
@@ -10,7 +10,7 @@ def menu():
         Enter E - For Edit a contact
         Enter D - For delete any contact
         Enter M - For add another(extra) number to the same person
-        Enter S - For search a contact
+        Enter a - For search a contact
         Enter Q  - to Exit 
         
     """)
@@ -26,7 +26,7 @@ def menu():
             edit_contact()
         elif user_choice == 'm':
             edit_multiple_contact_number()
-        elif user_choice == 's':
+        elif user_choice == 'a':
             search_contact()
         else:
             print('wrong keyword - please try again..')
@@ -37,7 +37,7 @@ def menu():
                 Enter E - For Edit a contact
                 Enter D - For delete any contact
                 Enter M - For add another(extra) number to the same person
-                Enter S - For search a contact
+                Enter a - For search a contact
                 Enter Q  - to Exit 
 
         """)
@@ -59,16 +59,24 @@ def delete_contacts():
 
 
 def edit_contact():
-    name = input("Enter the contact name you want to delete: ")
+    name = input("Enter the contact name you want to edit: ")
     database.edit(name)
 
 
 def edit_multiple_contact_number():
+
+    name = input("Enter the contact name you want to edit: ")
+    database.multiplecontact(name)
+
+
     name = input("Enter the contact name who have multiple number: ")
     database.multiple_number(name)
 
 
-def search_contact(): pass
+
+def search_contact():
+    name = input('Enter search name:')
+    database.search(name)
 
 
 menu()
