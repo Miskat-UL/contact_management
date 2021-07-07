@@ -12,7 +12,9 @@ def create():
         {
             'name': name,
             'number': number,
-            'email': email
+            'email': email,
+            "email2":None,
+           " contact2":None
         }
     )
 
@@ -63,3 +65,33 @@ def search(name):
             print('found the contact. retriving full information: ')
             print(
                 f"Name: {_['name']}, \nNumber:{_['number']}, \nEmail:{_['email']}")
+
+
+
+
+
+def multiplecontact(name):
+    for _ in contact_lists:
+        if name in _['name']:
+            print('found the contact. retriving full information: ')
+            print(
+                f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
+            edit_choice = input("""
+            which field do you want to edit
+            
+            Press 1 = For Edit Number
+            Press 2 - For Edit Email
+            """)
+            if edit_choice == '1':
+                re_contact = input("Rename the contact: ")
+                _['contact2']=re_contact
+
+
+            elif edit_choice == '2':
+                re_number = input("Renumber the mail: ")
+                _['email'] = re_number
+
+
+            print(f"After edit {_['name']}, {_['number']},{_['contact2']},{_['email']}")
+        else:
+            print("contact not found")
