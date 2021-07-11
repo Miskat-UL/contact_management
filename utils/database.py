@@ -36,7 +36,7 @@ def delete(name):
 
 def edit(name):
     for _ in contact_lists:
-        if name == _['name']:
+        if name in _['name']:
             print('found the contact. retriving full information: ')
             print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
             edit_choice = input("""
@@ -57,8 +57,9 @@ def edit(name):
                 re_mail = input("Edit Mail with: ")
                 _['email'] = re_mail
             print(f"After edit {_['name']}, {_['number']},{_['email']}")
-        else:
-            print("contact not found")
+            break
+    else:
+        print("contact not found")
 
 
 def multiple_number(name):
@@ -68,7 +69,8 @@ def multiple_number(name):
             add_number = input('Add Extra number: ')
             _["extra number"] = add_number
             break
-        else:
-            print('contact not found! ')
+
+    else:
+        print('contact not found! ')
 
 
