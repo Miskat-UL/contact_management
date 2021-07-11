@@ -3,8 +3,6 @@ contact_lists = []
 # update some codes
 
 
-# tofayel please add other functions!
-
 def create():
     name = input('Enter his/her name: ')
     number = input(f"Enter {name}'s number: ")
@@ -15,7 +13,12 @@ def create():
             'name': name,
             'number': number,
             'email': email,
+
+            "email2":None,
+           " contact2":None
+
             'extra number': None
+
         }
     )
 
@@ -23,8 +26,6 @@ def create():
 def show():
     return contact_lists
 
-
-#delete function updated.. # tofayel please check
 
 def delete(name):
     global contact_lists
@@ -38,7 +39,8 @@ def edit(name):
     for _ in contact_lists:
         if name in _['name']:
             print('found the contact. retriving full information: ')
-            print(f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
+            print(
+                f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
             edit_choice = input("""
             which field do you want to edit
             press 1 - For Edit Name
@@ -62,6 +64,43 @@ def edit(name):
         print("contact not found")
 
 
+def search(name):
+    for _ in contact_lists:
+        if name in _['name']:
+            print('found the contact. retriving full information: ')
+            print(
+                f"Name: {_['name']}, \nNumber:{_['number']}, \nEmail:{_['email']}")
+
+
+
+
+
+def multiplecontact(name):
+    for _ in contact_lists:
+        if name in _['name']:
+            print('found the contact. retriving full information: ')
+            print(
+                f"Name: {_['name']}, Number:{_['number']}, Email:{_['email']}")
+            edit_choice = input("""
+            which field do you want to edit
+            
+            Press 1 = For Edit Number
+            Press 2 - For Edit Email
+            """)
+            if edit_choice == '1':
+                re_contact = input("Rename the contact: ")
+                _['contact2']=re_contact
+
+
+            elif edit_choice == '2':
+                re_number = input("Renumber the mail: ")
+                _['email'] = re_number
+
+
+            print(f"After edit {_['name']}, {_['number']},{_['contact2']},{_['email']}")
+        else:
+            print("contact not found")
+
 def multiple_number(name):
     for _ in contact_lists:
         if _['name'] == name:
@@ -72,5 +111,6 @@ def multiple_number(name):
 
     else:
         print('contact not found! ')
+
 
 
