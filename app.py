@@ -1,8 +1,15 @@
 # contact management system
 from utils import database
-
+import os
+import platform
 
 def menu():
+    x = "#" * 30
+    y = "=" * 28
+    global bye
+
+    bye = "\n {}\n# {} #\n# ===> Brought To You By <===  #\n# ===> *Team_pyscripter*  <===  #\n# {} #\n {}".format(
+        x, y, y, x)
 
     user_choice = input("""
         Enter C - For create contact
@@ -80,3 +87,17 @@ def search_contact():
 
 
 menu()
+def runAgain():
+    runAgn = input("\nwant To Run Again Y/n: ")
+    if(runAgn.lower() == 'y'):
+        if(platform.system() == "Windows"):
+            print(os.system('cls'))
+        else:
+            print(os.system('clear'))
+        menu()
+        runAgain()
+    else:
+        quit(bye)
+
+
+runAgain()
