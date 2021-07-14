@@ -87,13 +87,15 @@ def search_contact():
 
 
 menu()
+
+
 def runAgain():
     runAgn = input("\nwant To Run Again Y/n: ")
     if(runAgn.lower() == 'y'):
-        if(platform.system() == "Windows"):
-            print(os.system('cls'))
-        else:
-            print(os.system('clear'))
+        # if(platform.system() == "Windows"):
+        #     print(os.system('cls'))
+        # else:
+        #     print(os.system('clear'))
         menu()
         runAgain()
     else:
